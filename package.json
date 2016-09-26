@@ -1,0 +1,27 @@
+{
+  "name": "Corporate-services",
+  "version": "1.0.0",
+  "description": "Prerequisitos:\r 1. Instalar nodejs a nivel global\r \t1.1. Descargar el instalador de Nodejs de la siguiente ruta https://nodejs.org/dist/v4.4.7/node-v4.4.7-x64.msi\r \t1.2. Ejecutar el instalador siguiendo los pasos por defecto.\r 2. Instalar bower a nivel global\r \t2.1. Abrir una ventana de comandos (cmd) como administrador\r \t2.2. Ejecutar el comando npm -g install bower\r 3. Instalar browser-sync\r \t3.1. Abrir una ventana de comandos (cmd) como administrador\r \t3.2. En la ventana de comandos, ubicarse en la carpeta donde están alojados los archivos del proyecto\r \t3.3. Ejecutar el comando npm install -g browser-sync\r 4. Iniciar el servidor de browser-sync\r \t4.1. Abrir una ventana de comandos (cmd) como administrador\r \t4.2. En la ventana de comandos, ubicarse en la carpeta donde están alojados los archivos del proyecto\r \t4.3. Ejecutar el comando browser-sync start --server --files \"*\"",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "connect-history-api-fallback": "^1.3.0",
+    "browser-sync": "^2.14.0",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sinapsis-Innovation/Corporate-services.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sinapsis-Innovation/Corporate-services/issues"
+  },
+  "homepage": "https://github.com/Sinapsis-Innovation/Corporate-services#readme"
+}

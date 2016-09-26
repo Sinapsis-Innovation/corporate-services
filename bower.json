@@ -1,0 +1,27 @@
+{
+  "name": "Corporate-services",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Cristian Agudelo"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "angular": "angularjs#^1.5.6",
+    "angular-ui-router": "^0.3.0",
+    "normalize-css": "normalize.css#^4.1.1",
+    "ngstorage": "^0.3.11",
+    "angular-ui-select": "^0.19.4",
+    "angular-messages": "^1.5.8"
+  }
+}
