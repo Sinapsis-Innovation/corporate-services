@@ -6,6 +6,19 @@ section.section label {
     display: block;
     margin-top: 1rem;
 }
+section.section input {
+    margin-top: 1rem;
+}
+section.section .input-group input {
+    margin-top: 0;
+}
+section.section .fieldlist{
+  list-style-type: none;
+}
+section.section .fieldlist li{
+  display: inline-block;
+  margin: 1rem;
+}
 .title {
     margin: 2rem auto;
     text-align: center;
@@ -26,7 +39,7 @@ section.section label {
     box-shadow: 1px 1px 7px 1px rgba(128, 128, 128, .2);
     overflow: hidden;
     padding: 2rem;
-    margin: 0.5rem;
+    margin: 1.5rem;
 }
 .formContainer .k-radio-label:before {
     width: 18px;

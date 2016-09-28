@@ -1,154 +1,315 @@
 <section class="container">
     <h1 class="title">CORPORATE PROCUREMENT</h1>
     <div class="formContainer container">
-        <h2 class="title">Contract Type</h2>
-        <select name="contractType" id="contractType" ng-model="contract">
-            <option value="">Select Contract Type</option>
-            <option value="consultingFirm">CONSULTING FIRM CONTRACT</option>
-            <option value="contractPayments">CONTRACT PAYMENTS</option>
-            <option value="contractAmedment">CONTRACT AMENDMENT</option>
-        </select>
+        <div class="col-md-6 col-md-offset-3">
+            <h2 class="title">Contract Type</h2>
+            <select name="contractType" class="form-control" id="contractType" ng-model="contract">
+                <option value="">Select Contract Type</option>
+                <option value="consultingFirm">CONSULTING FIRM CONTRACT</option>
+                <option value="contractPayments">CONTRACT PAYMENTS</option>
+                <option value="contractAmedment">CONTRACT AMENDMENT</option>
+            </select>
+        </div>
     </div>
     <section class="section" ng-show="contract == 'consultingFirm'">
         <div class="formContainer container">
-            <h2 class="title">TYPE OF SERVICE</h2>
-            <ul class="fieldlist">
-                <li>
-                    <input type="radio" name="service" id="service1" value="evaluation" ng-model="consultingFirm.service" class="k-radio">
-                    <label class="k-radio-label" for="service1">Evaluation</label>
-                </li>
-                <li>
-                    <input type="radio" name="service" id="service2" value="it" ng-model="consultingFirm.service" class="k-radio">
-                    <label class="k-radio-label" for="service2">IT development</label>
-                </li>
-                <li>
-                    <input type="radio" name="service" id="service3" value="impact" ng-model="consultingFirm.service" class="k-radio">
-                    <label class="k-radio-label" for="service3">Impact Evaluation</label>
-                </li>
-                <li>
-                    <input type="radio" name="service" id="service4" value="knowledge" ng-model="consultingFirm.service" class="k-radio">
-                    <label class="k-radio-label" for="service4">Knowledge</label>
-                </li>
-                <li>
-                    <input type="radio" name="service" id="service5" value="publication" ng-model="consultingFirm.service" class="k-radio">
-                    <label class="k-radio-label" for="service5">Publication</label>
-                </li>
-                <li>
-                    <input type="radio" name="service" id="service6" value="survey" ng-model="consultingFirm.service" class="k-radio">
-                    <label class="k-radio-label" for="service6">Survey</label>
-                </li>
-                <li>
-                    <input type="radio" name="service" id="service7" value="study" ng-model="consultingFirm.service" class="k-radio">
-                    <label class="k-radio-label" for="service7">Study</label>
-                </li>
-                <li>
-                    <input type="radio" name="service" id="service8" value="other" ng-model="consultingFirm.service" class="k-radio">
-                    <label class="k-radio-label" for="service8">Other (specify)</label>
-                </li>
-            </ul>
-            <input type="text" class="k-input" ng-model="consultingFirm.other" ng-if="consultingFirm.service == 'other'">
-        </div>
-        <div class="formContainer container">
-            <h2 class="title">VENDOR</h2>
-            <input type="number" class="k-input" ng-model="consultingFirm.vendor.number" placeholder="Number">
-            <input type="text" class="k-input" ng-model="consultingFirm.vendor.name" placeholder="Name">
-            <input type="text" class="k-input" ng-model="consultingFirm.vendor.country" placeholder="Country">
-            <input type="text" class="k-input" ng-model="consultingFirm.vendor.legalRepresentative" placeholder="Legal representative">
-            <input type="text" class="k-input" ng-model="consultingFirm.vendor.position" placeholder="Position">
-            <input type="email" class="k-input" ng-model="consultingFirm.vendor.email" placeholder="E-mail">
-        </div>
-        <div class="formContainer container">
-            <h2 class="title">SOURCE OF FUNDING</h2>
-            <select name="sourceOfFounding" ng-model="consultingFirm.sourceOfFounding" id="sourceOfFounding">
-                <option value="">Select The Source Of Founding</option>
-                <option value="administrative">Administrative</option>
-                <option value="mif">MIF DIRECTORY</option>
-            </select>
-            <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'administrative'">
-                <input type="text" class="k-input" ng-model="consultingFirm.source.found" placeholder="Fund">
-                <input type="text" class="k-input" ng-model="consultingFirm.source.costCenter" placeholder="Cost center">
-                <input type="text" class="k-input" ng-model="consultingFirm.source.account" placeholder="Account">
-                <input type="text" class="k-input" ng-model="consultingFirm.source.WBS" placeholder="WBS">
-                <input type="text" class="k-input" ng-model="consultingFirm.source.functionalArea" placeholder="Functional area">
-            </div>
-            <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'mif'">
-                <input type="number" class="k-input" ng-model="consultingFirm.source.number" placeholder="Number">
-                <input type="text" class="k-input" ng-model="consultingFirm.source.CMO" placeholder="CMO">
+            <div class="col-md-6 col-md-offset-3">
+                <select name="source" id="source" class="form-control" ng-model="consultingFirm.source">
+                    <option value="">Select One</option>
+                    <option value="soleSource">SOLE SOURCE</option>
+                    <option value="proposals">REQUEST FOR PROPOSALS</option>
+                </select>
             </div>
         </div>
-        <div class="formContainer container">
-            <h2 class="title">TOTAL CONTRACT AMOUNT</h2>
-            <input type="number" class="k-input" ng-model="consultingFirm.contract.amount" placeholder="Amount">
-            <input type="text" class="k-input" ng-model="consultingFirm.contract.currency" placeholder="Currency">
-        </div>
-        <div class="formContainer container">
-            <h2 class="title">EXECUTION PERIOD</h2>
-            <div id="calendar"></div>
-            <input type="text" class="k-input" ng-model="consultingFirm.contract.currency" placeholder="Currency">
-        </div>
-        <div class="formContainer container">
-            <h2 class="title">UNIT CHIEF'S APPROVAL</h2>
-            <input type="text" class="k-input" ng-model="consultingFirm.chiefs.area1" placeholder="Focus Area 1">
-            <input type="text" class="k-input" ng-model="consultingFirm.chiefs.area2" placeholder="Focus Area 2">
-            <input type="text" class="k-input" ng-model="consultingFirm.chiefs.area3" placeholder="Focus Area 3">
-            <input type="text" class="k-input" ng-model="consultingFirm.chiefs.communications" placeholder="Communications">
-            <input type="text" class="k-input" ng-model="consultingFirm.chiefs.strategy" placeholder="Strategy">
-            <input type="email" class="k-input" ng-model="consultingFirm.chiefs.CFO" placeholder="CFO">
-        </div>
-        <div class="formContainer container">
-            <h2 class="title">REQUIRED DOCUMENTS</h2>
-            <input type="text" class="k-input" ng-model="consultingFirm.contract.termsOfReference" placeholder="Terms of Reference">
-        </div>
-        <button type="button" name="button" class="k-button k-primary">Submit</button>
+
+        <section class="section" ng-show="consultingFirm.source == 'soleSource'">
+            <div class="formContainer container">
+                <h2 class="title">TYPE OF SERVICE</h2>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="service" id="service1" value="evaluation" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service1">Evaluation</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service2" value="it" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service2">IT development</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service3" value="impact" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service3">Impact Evaluation</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service4" value="knowledge" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service4">Knowledge</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service5" value="publication" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service5">Publication</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service6" value="survey" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service6">Survey</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service7" value="study" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service7">Study</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service8" value="other" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service8">Other (specify)</label>
+                    </li>
+                </ul>
+                <input type="text" class="form-control" ng-model="consultingFirm.other" ng-if="consultingFirm.service == 'other'" placeholder="other">
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">VENDOR</h2>
+                <input type="number" class="form-control" ng-model="consultingFirm.vendor.number" placeholder="Number">
+                <input type="text" class="form-control" ng-model="consultingFirm.vendor.name" placeholder="Name">
+                <input type="text" class="form-control" ng-model="consultingFirm.vendor.country" placeholder="Country">
+                <input type="text" class="form-control" ng-model="consultingFirm.vendor.legalRepresentative" placeholder="Legal representative">
+                <input type="text" class="form-control" ng-model="consultingFirm.vendor.position" placeholder="Position">
+                <input type="email" class="form-control" ng-model="consultingFirm.vendor.email" placeholder="E-mail">
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">SOURCE OF FUNDING</h2>
+                <select name="sourceOfFounding" class="form-control" ng-model="consultingFirm.sourceOfFounding" id="sourceOfFounding">
+                    <option value="">Select The Source Of Founding</option>
+                    <option value="administrative">Administrative</option>
+                    <option value="mif">MIF DIRECTORY</option>
+                </select>
+                <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'administrative'">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.found" placeholder="Fund">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.costCenter" placeholder="Cost center">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.account" placeholder="Account">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.WBS" placeholder="WBS">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.functionalArea" placeholder="Functional area">
+                </div>
+                <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'mif'">
+                    <input type="number" class="form-control" ng-model="consultingFirm.source.number" placeholder="Number">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.CMO" placeholder="CMO">
+                </div>
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">TOTAL CONTRACT AMOUNT</h2>
+                <input type="number" class="form-control" ng-model="consultingFirm.contract.amount" placeholder="Amount">
+                <input type="text" class="form-control" ng-model="consultingFirm.contract.currency" placeholder="Currency">
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">EXECUTION PERIOD</h2>
+                <label>Start date</label>
+                <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
+                    <input type="text" class="form-control input-lg datepicker">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                <label>End date</label>
+                <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
+                    <input type="text" class="form-control input-lg datepicker">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">UNIT CHIEF'S APPROVAL</h2>
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area1" placeholder="Focus Area 1">
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area2" placeholder="Focus Area 2">
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area3" placeholder="Focus Area 3">
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.communications" placeholder="Communications">
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.strategy" placeholder="Strategy">
+                <input type="email" class="form-control" ng-model="consultingFirm.chiefs.CFO" placeholder="CFO">
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">REQUIRED DOCUMENTS</h2>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">Terms of Reference</label>
+                    <input type="file" class="form-control" ng-model="consultingFirm.contract.termsOfReference" placeholder="Terms of Reference">
+                </div>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">Provider's proposal</label>
+                    <input type="file" class="form-control" ng-model="consultingFirm.contract.termsOfReference" placeholder="Terms of Reference">
+                </div>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">BCP-773 form if Sole Source</label>
+                    <input type="file" class="form-control" ng-model="consultingFirm.contract.termsOfReference" placeholder="Terms of Reference">
+                </div>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">System closes form to Requester</label>
+                    <input type="file" class="form-control" ng-model="consultingFirm.contract.termsOfReference" placeholder="Terms of Reference">
+                </div>
+            </div>
+            <button type="button" name="button" class="btn btn-primary">Submit</button>
+        </section>
+        <section class="section" ng-show="consultingFirm.source == 'proposals'">
+            <div class="formContainer container">
+                <h2 class="title">TYPE OF SERVICE</h2>
+                <ul class="fieldlist">
+                    <li>
+                        <input type="radio" name="service" id="service1" value="evaluation" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service1">Evaluation</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service2" value="it" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service2">IT development</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service3" value="impact" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service3">Impact Evaluation</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service4" value="knowledge" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service4">Knowledge</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service5" value="publication" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service5">Publication</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service6" value="survey" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service6">Survey</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service7" value="study" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service7">Study</label>
+                    </li>
+                    <li>
+                        <input type="radio" name="service" id="service8" value="other" ng-model="consultingFirm.service" class="k-radio">
+                        <label class="k-radio-label" for="service8">Other (specify)</label>
+                    </li>
+                </ul>
+                <input type="text" class="form-control" ng-model="consultingFirm.other" ng-if="consultingFirm.service == 'other'">
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">SHORT LIST</h2>
+                <input type="text" class="form-control" ng-model="consultingFirm.list.name" placeholder="Name">
+                <input type="text" class="form-control" ng-model="consultingFirm.list.country" placeholder="Country">
+                <input type="text" class="form-control" ng-model="consultingFirm.list.legalRepresentative" placeholder="Legal representative">
+                <input type="text" class="form-control" ng-model="consultingFirm.list.position" placeholder="Position">
+                <input type="email" class="form-control" ng-model="consultingFirm.list.email" placeholder="E-mail">
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">SOURCE OF FUNDING</h2>
+                <select name="sourceOfFounding" class="form-control" ng-model="consultingFirm.sourceOfFounding" id="sourceOfFounding">
+                    <option value="">Select The Source Of Founding</option>
+                    <option value="administrative">Administrative</option>
+                    <option value="mif">MIF DIRECTORY</option>
+                </select>
+                <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'administrative'">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.found" placeholder="Fund">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.costCenter" placeholder="Cost center">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.account" placeholder="Account">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.WBS" placeholder="WBS">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.functionalArea" placeholder="Functional area">
+                </div>
+                <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'mif'">
+                    <input type="number" class="form-control" ng-model="consultingFirm.source.number" placeholder="Number">
+                    <input type="text" class="form-control" ng-model="consultingFirm.source.CMO" placeholder="CMO">
+                </div>
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">ESTIMATED CONTRACT AMOUNT</h2>
+                <input type="number" class="form-control" ng-model="consultingFirm.contract.amount" placeholder="Amount">
+                <input type="text" class="form-control" ng-model="consultingFirm.contract.currency" placeholder="Currency">
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">EXECUTION PERIOD</h2>
+                <label>Start date</label>
+                <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
+                    <input type="text" class="form-control input-lg datepicker">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                <label>End date</label>
+                <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
+                    <input type="text" class="form-control input-lg datepicker">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">UNIT CHIEF'S APPROVAL</h2>
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area1" placeholder="Focus Area 1">
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area2" placeholder="Focus Area 2">
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area3" placeholder="Focus Area 3">
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.communications" placeholder="Communications">
+                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.strategy" placeholder="Strategy">
+                <input type="email" class="form-control" ng-model="consultingFirm.chiefs.CFO" placeholder="CFO">
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">REQUIRED DOCUMENTS</h2>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">Terms of Reference</label>
+                    <input type="file" class="form-control" ng-model="consultingFirm.contract.termsOfReference" placeholder="Terms of Reference">
+                </div>
+            </div>
+            <button type="button" name="button" class="btn btn-primary">Submit</button>
+        </section>
     </section>
 
     <section class="section" ng-show="contract == 'contractPayments'">
         <div class="formContainer container">
             <h2 class="title">CONTRACT NUMBER</h2>
-            <input type="number" class="k-input" ng-model="contractPayments.contractNumber" placeholder="CONTRACT NUMBER">
+            <input type="number" class="form-control" ng-model="contractPayments.contractNumber" placeholder="CONTRACT NUMBER">
         </div>
         <div class="formContainer container">
             <h2 class="title">PAYMENT NUMBER</h2>
-            <input type="number" class="k-input" ng-model="contractPayments.paymentNumber" placeholder="PAYMENT NUMBER">
+            <input type="number" class="form-control" ng-model="contractPayments.paymentNumber" placeholder="PAYMENT NUMBER">
         </div>
         <div class="formContainer container">
             <h2 class="title">UNIT CHIEF'S APPROVAL</h2>
-            <input type="text" class="k-input" ng-model="contractPayments.chiefs.area1" placeholder="Focus Area 1">
-            <input type="text" class="k-input" ng-model="contractPayments.chiefs.area2" placeholder="Focus Area 2">
-            <input type="text" class="k-input" ng-model="contractPayments.chiefs.area3" placeholder="Focus Area 3">
-            <input type="text" class="k-input" ng-model="contractPayments.chiefs.communications" placeholder="Communications">
-            <input type="text" class="k-input" ng-model="contractPayments.chiefs.strategy" placeholder="Strategy">
-            <input type="email" class="k-input" ng-model="contractPayments.chiefs.CFO" placeholder="CFO">
+            <input type="text" class="form-control" ng-model="contractPayments.chiefs.area1" placeholder="Focus Area 1">
+            <input type="text" class="form-control" ng-model="contractPayments.chiefs.area2" placeholder="Focus Area 2">
+            <input type="text" class="form-control" ng-model="contractPayments.chiefs.area3" placeholder="Focus Area 3">
+            <input type="text" class="form-control" ng-model="contractPayments.chiefs.communications" placeholder="Communications">
+            <input type="text" class="form-control" ng-model="contractPayments.chiefs.strategy" placeholder="Strategy">
+            <input type="email" class="form-control" ng-model="contractPayments.chiefs.CFO" placeholder="CFO">
         </div>
         <button type="button" name="button" class="k-button k-primary">Submit</button>
     </section>
 
     <section class="section formContainer container" ng-show="contract == 'contractAmedment'">
         <h2 class="title">TYPE OF AMENDMENT</h2>
-        <select name="typeOfAmendment" ng-model="contractAmedment.typeOfAmendment" id="typeOfAmendment">
+        <select name="typeOfAmendment" class="form-control" ng-model="contractAmedment.typeOfAmendment" id="typeOfAmendment">
             <option value="">Select The Type Of Amendment</option>
             <option value="execution">EXECUTION EXTENSION ONLY</option>
             <option value="documents">REQUIRED DOCUMENTS</option>
             <option value="chiefs">UNIT CHIEF'S APPROVAL</option>
         </select>
         <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'execution'">
-            <input type="number" class="k-input" ng-model="contractAmedment.amendment.contractNumber" placeholder="Contract number">
-            <input type="text" class="k-input" ng-model="contractAmedment.amendment.Vendor" placeholder="Vendor">
+            <input type="number" class="form-control" ng-model="contractAmedment.amendment.contractNumber" placeholder="Contract number">
+            <input type="text" class="form-control" ng-model="contractAmedment.amendment.Vendor" placeholder="Vendor">
             <label>Current expiration date</label>
-            <div id="calendar2"></div>
+            <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
+                <input type="text" class="form-control input-lg datepicker">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
             <label>New expiration date</label>
-            <div id="calendar3"></div>
+            <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
+                <input type="text" class="form-control input-lg datepicker">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
         </div>
         <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'documents'">
-            <input type="text" class="k-input" ng-model="contractAmedment.amendment.confirmation" placeholder="Confirmation of no additonal cost from provider">
+            <div class="input-group col-md-4 col-md-offset-4">
+                <label for="Confirmation of no additonal cost from provider"></label>
+                <input type="file" class="form-control" ng-model="contractAmedment.amendment.confirmation" placeholder="Confirmation of no additonal cost from provider">
+            </div>
+
         </div>
         <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'chiefs'">
-            <input type="text" class="k-input" ng-model="contractAmedment.chiefs.area1" placeholder="Focus Area 1">
-            <input type="text" class="k-input" ng-model="contractAmedment.chiefs.area2" placeholder="Focus Area 2">
-            <input type="text" class="k-input" ng-model="contractAmedment.chiefs.area3" placeholder="Focus Area 3">
-            <input type="text" class="k-input" ng-model="contractAmedment.chiefs.communications" placeholder="Communications">
-            <input type="text" class="k-input" ng-model="contractAmedment.chiefs.strategy" placeholder="Strategy">
-            <input type="email" class="k-input" ng-model="contractAmedment.chiefs.CFO" placeholder="CFO">
+            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.area1" placeholder="Focus Area 1">
+            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.area2" placeholder="Focus Area 2">
+            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.area3" placeholder="Focus Area 3">
+            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.communications" placeholder="Communications">
+            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.strategy" placeholder="Strategy">
+            <input type="email" class="form-control" ng-model="contractAmedment.chiefs.CFO" placeholder="CFO">
         </div>
         <button type="button" name="button" class="k-button k-primary" ng-show="contractAmedment.typeOfAmendment">Submit</button>
     </section>
