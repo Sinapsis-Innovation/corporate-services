@@ -2,9 +2,9 @@
     <h1 class="title">CORPORATE PROCUREMENT</h1>
     <div class="formContainer container">
         <div class="col-md-6 col-md-offset-3">
-            <h2 class="title">Contract Type</h2>
+            <!-- <h2 class="title">Contract Type</h2> -->
             <select name="contractType" class="form-control" id="contractType" ng-model="contract">
-                <option value="">Select Contract Type</option>
+                <option value="">Select Procurement Type</option>
                 <option value="consultingFirm">CONSULTING FIRM CONTRACT</option>
                 <option value="contractPayments">CONTRACT PAYMENTS</option>
                 <option value="contractAmedment">CONTRACT AMENDMENT</option>
@@ -15,7 +15,7 @@
         <div class="formContainer container">
             <div class="col-md-6 col-md-offset-3">
                 <select name="source" id="source" class="form-control" ng-model="consultingFirm.source">
-                    <option value="">Select One</option>
+                    <option value="">Select Request Type</option>
                     <option value="soleSource">SOLE SOURCE</option>
                     <option value="proposals">REQUEST FOR PROPOSALS</option>
                 </select>
@@ -24,75 +24,191 @@
 
         <section class="section" ng-show="consultingFirm.source == 'soleSource'">
             <div class="formContainer container">
-                <h2 class="title">TYPE OF SERVICE</h2>
-                <ul class="fieldlist">
-                    <li>
-                        <input type="radio" name="service" id="service1" value="evaluation" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service1">Evaluation</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service2" value="it" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service2">IT development</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service3" value="impact" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service3">Impact Evaluation</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service4" value="knowledge" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service4">Knowledge</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service5" value="publication" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service5">Publication</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service6" value="survey" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service6">Survey</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service7" value="study" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service7">Study</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service8" value="other" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service8">Other (specify)</label>
-                    </li>
-                </ul>
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="source" id="source" class="form-control" ng-model="consultingFirm.service">
+                        <option value="">Select tipe of service</option>
+                        <option value="evaluation">Evaluation</option>
+                        <option value="IT">IT development</option>
+                        <option value="impactEvaluation">Impact Evaluation</option>
+                        <option value="knowledge">Knowledge</option>
+                        <option value="publication">Publication</option>
+                        <option value="survey">Survey</option>
+                        <option value="other">Other (specify)</option>
+                    </select>
+                </div>
                 <input type="text" class="form-control" ng-model="consultingFirm.other" ng-if="consultingFirm.service == 'other'" placeholder="other">
             </div>
             <div class="formContainer container">
                 <h2 class="title">VENDOR</h2>
-                <input type="number" class="form-control" ng-model="consultingFirm.vendor.number" placeholder="Number">
-                <input type="text" class="form-control" ng-model="consultingFirm.vendor.name" placeholder="Name">
-                <input type="text" class="form-control" ng-model="consultingFirm.vendor.country" placeholder="Country">
-                <input type="text" class="form-control" ng-model="consultingFirm.vendor.legalRepresentative" placeholder="Legal representative">
-                <input type="text" class="form-control" ng-model="consultingFirm.vendor.position" placeholder="Position">
-                <input type="email" class="form-control" ng-model="consultingFirm.vendor.email" placeholder="E-mail">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="number" class="form-control" ng-model="consultingFirm.vendor.number" placeholder="Number">
+                    <input type="text" class="form-control" ng-model="consultingFirm.vendor.name" placeholder="Name">
+                    <input type="text" class="form-control" ng-model="consultingFirm.vendor.country" placeholder="Country">
+                    <input type="text" class="form-control" ng-model="consultingFirm.vendor.legalRepresentative" placeholder="Legal representative">
+                    <input type="text" class="form-control" ng-model="consultingFirm.vendor.position" placeholder="Position">
+                    <input type="email" class="form-control" ng-model="consultingFirm.vendor.email" placeholder="E-mail">
+                </div>
             </div>
             <div class="formContainer container">
-                <h2 class="title">SOURCE OF FUNDING</h2>
-                <select name="sourceOfFounding" class="form-control" ng-model="consultingFirm.sourceOfFounding" id="sourceOfFounding">
-                    <option value="">Select The Source Of Founding</option>
-                    <option value="administrative">Administrative</option>
-                    <option value="mif">MIF DIRECTORY</option>
-                </select>
+                <!-- <h2 class="title">SOURCE OF FUNDING</h2> -->
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="sourceOfFounding" class="form-control" ng-model="consultingFirm.sourceOfFounding" id="sourceOfFounding">
+                        <option value="">Select The Source Of Founding</option>
+                        <option value="administrative">Administrative</option>
+                        <option value="mif">Technical Cooperation</option>
+                    </select>
+                </div>
                 <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'administrative'">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.found" placeholder="Fund">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.costCenter" placeholder="Cost center">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.account" placeholder="Account">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.WBS" placeholder="WBS">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.functionalArea" placeholder="Functional area">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.found" placeholder="Fund">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.costCenter" placeholder="Cost center">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.account" placeholder="Account">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.WBS" placeholder="WBS">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.functionalArea" placeholder="Functional area">
+                    </div>
                 </div>
                 <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'mif'">
-                    <input type="number" class="form-control" ng-model="consultingFirm.source.number" placeholder="Number">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.CMO" placeholder="CMO">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="number" class="form-control" ng-model="consultingFirm.source.number" placeholder="Number">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.CMO" placeholder="CMO">
+                    </div>
                 </div>
             </div>
             <div class="formContainer container">
                 <h2 class="title">TOTAL CONTRACT AMOUNT</h2>
-                <input type="number" class="form-control" ng-model="consultingFirm.contract.amount" placeholder="Amount">
-                <input type="text" class="form-control" ng-model="consultingFirm.contract.currency" placeholder="Currency">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="number" class="form-control" ng-model="consultingFirm.contract.amount" placeholder="Amount">
+                </div>
+
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="currencies" class="form-control">
+                        <option selected value="">Select currency</option>
+                        <option value="America (United States) Dollars - USD">America (United States) Dollars – USD</option>
+                        <option value="Afghanistan Afghanis - AFN">Afghanistan Afghanis – AFN</option>
+                        <option value="Albania Leke - ALL">Albania Leke – ALL</option>
+                        <option value="Algeria Dinars - DZD">Algeria Dinars – DZD</option>
+                        <option value="Argentina Pesos - ARS">Argentina Pesos – ARS</option>
+                        <option value="Australia Dollars - AUD">Australia Dollars – AUD</option>
+                        <option value="Austria Schillings - ATS">Austria Schillings – ATS</OPTION>
+
+                        <option value="Bahamas Dollars - BSD">Bahamas Dollars – BSD</option>
+                        <option value="Bahrain Dinars - BHD">Bahrain Dinars – BHD</option>
+                        <option value="Bangladesh Taka - BDT">Bangladesh Taka – BDT</option>
+                        <option value="Barbados Dollars - BBD">Barbados Dollars – BBD</option>
+                        <option value="Belgium Francs - BEF">Belgium Francs – BEF</OPTION>
+                        <option value="Bermuda Dollars - BMD">Bermuda Dollars – BMD</option>
+
+                        <option value="Brazil Reais - BRL">Brazil Reais – BRL</option>
+                        <option value="Bulgaria Leva - BGN">Bulgaria Leva – BGN</option>
+                        <option value="Canada Dollars - CAD">Canada Dollars – CAD</option>
+                        <option value="CFA BCEAO Francs - XOF">CFA BCEAO Francs – XOF</option>
+                        <option value="CFA BEAC Francs - XAF">CFA BEAC Francs – XAF</option>
+                        <option value="Chile Pesos - CLP">Chile Pesos – CLP</option>
+
+                        <option value="China Yuan Renminbi - CNY">China Yuan Renminbi – CNY</option>
+                        <option value="RMB (China Yuan Renminbi) - CNY">RMB (China Yuan Renminbi) – CNY</option>
+                        <option value="Colombia Pesos - COP">Colombia Pesos – COP</option>
+                        <option value="CFP Francs - XPF">CFP Francs – XPF</option>
+                        <option value="Costa Rica Colones - CRC">Costa Rica Colones – CRC</option>
+                        <option value="Croatia Kuna - HRK">Croatia Kuna – HRK</option>
+
+                        <option value="Cyprus Pounds - CYP">Cyprus Pounds – CYP</option>
+                        <option value="Czech Republic Koruny - CZK">Czech Republic Koruny – CZK</option>
+                        <option value="Denmark Kroner - DKK">Denmark Kroner – DKK</option>
+                        <option value="Deutsche (Germany) Marks - DEM">Deutsche (Germany) Marks – DEM</OPTION>
+                        <option value="Dominican Republic Pesos - DOP">Dominican Republic Pesos – DOP</option>
+                        <option value="Dutch (Netherlands) Guilders - NLG">Dutch (Netherlands) Guilders – NLG</OPTION>
+
+                        <option value="Eastern Caribbean Dollars - XCD">Eastern Caribbean Dollars – XCD</option>
+                        <option value="Egypt Pounds - EGP">Egypt Pounds – EGP</option>
+                        <option value="Estonia Krooni - EEK">Estonia Krooni – EEK</option>
+                        <option value="Euro - EUR">Euro – EUR</option>
+                        <option value="Fiji Dollars - FJD">Fiji Dollars – FJD</option>
+                        <option value="Finland Markkaa - FIM">Finland Markkaa – FIM</OPTION>
+
+                        <option value="France Francs - FRF*">France Francs – FRF*</OPTION>
+                        <option value="Germany Deutsche Marks - DEM">Germany Deutsche Marks – DEM</OPTION>
+                        <option value="Gold Ounces - XAU">Gold Ounces – XAU</option>
+                        <option value="Greece Drachmae - GRD">Greece Drachmae – GRD</OPTION>
+                        <option value="Guatemalan Quetzal - GTQ">Guatemalan Quetzal – GTQ</OPTION>
+                        <option value="Holland (Netherlands) Guilders - NLG">Holland (Netherlands) Guilders – NLG</OPTION>
+                        <option value="Hong Kong Dollars - HKD">Hong Kong Dollars – HKD</option>
+
+                        <option value="Hungary Forint - HUF">Hungary Forint – HUF</option>
+                        <option value="Iceland Kronur - ISK">Iceland Kronur – ISK</option>
+                        <option value="IMF Special Drawing Right - XDR">IMF Special Drawing Right – XDR</option>
+                        <option value="India Rupees - INR">India Rupees – INR</option>
+                        <option value="Indonesia Rupiahs - IDR">Indonesia Rupiahs – IDR</option>
+                        <option value="Iran Rials - IRR">Iran Rials – IRR</option>
+
+                        <option value="Iraq Dinars - IQD">Iraq Dinars – IQD</option>
+                        <option value="Ireland Pounds - IEP*">Ireland Pounds – IEP*</OPTION>
+                        <option value="Israel New Shekels - ILS">Israel New Shekels – ILS</option>
+                        <option value="Italy Lire - ITL*">Italy Lire – ITL*</OPTION>
+                        <option value="Jamaica Dollars - JMD">Jamaica Dollars – JMD</option>
+                        <option value="Japan Yen - JPY">Japan Yen – JPY</option>
+
+                        <option value="Jordan Dinars - JOD">Jordan Dinars – JOD</option>
+                        <option value="Kenya Shillings - KES">Kenya Shillings – KES</option>
+                        <option value="Korea (South) Won - KRW">Korea (South) Won – KRW</option>
+                        <option value="Kuwait Dinars - KWD">Kuwait Dinars – KWD</option>
+                        <option value="Lebanon Pounds - LBP">Lebanon Pounds – LBP</option>
+                        <option value="Luxembourg Francs - LUF">Luxembourg Francs – LUF</OPTION>
+
+                        <option value="Malaysia Ringgits - MYR">Malaysia Ringgits – MYR</option>
+                        <option value="Malta Liri - MTL">Malta Liri – MTL</option>
+                        <option value="Mauritius Rupees - MUR">Mauritius Rupees – MUR</option>
+                        <option value="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
+                        <option value="Morocco Dirhams - MAD">Morocco Dirhams – MAD</option>
+                        <option value="Netherlands Guilders - NLG">Netherlands Guilders – NLG</OPTION>
+
+                        <option value="New Zealand Dollars - NZD">New Zealand Dollars – NZD</option>
+                        <option value="Norway Kroner - NOK">Norway Kroner – NOK</option>
+                        <option value="Oman Rials - OMR">Oman Rials – OMR</option>
+                        <option value="Pakistan Rupees - PKR">Pakistan Rupees – PKR</option>
+                        <option value="Palladium Ounces - XPD">Palladium Ounces – XPD</option>
+                        <option value="Peru Nuevos Soles - PEN">Peru Nuevos Soles – PEN</option>
+
+                        <option value="Philippines Pesos - PHP">Philippines Pesos – PHP</option>
+                        <option value="Platinum Ounces - XPT">Platinum Ounces – XPT</option>
+                        <option value="Poland Zlotych - PLN">Poland Zlotych – PLN</option>
+                        <option value="Portugal Escudos - PTE">Portugal Escudos – PTE</OPTION>
+                        <option value="Qatar Riyals - QAR">Qatar Riyals – QAR</option>
+                        <option value="Romania New Lei - RON">Romania New Lei – RON</option>
+
+                        <option value="Romania Lei - ROL">Romania Lei – ROL</option>
+                        <option value="Russia Rubles - RUB">Russia Rubles – RUB</option>
+                        <option value="Saudi Arabia Riyals - SAR">Saudi Arabia Riyals – SAR</option>
+                        <option value="Silver Ounces - XAG">Silver Ounces – XAG</option>
+                        <option value="Singapore Dollars - SGD">Singapore Dollars – SGD</option>
+                        <option value="Slovakia Koruny - SKK">Slovakia Koruny – SKK</option>
+
+                        <option value="Slovenia Tolars - SIT">Slovenia Tolars – SIT</option>
+                        <option value="South Africa Rand - ZAR">South Africa Rand – ZAR</option>
+                        <option value="South Korea Won - KRW">South Korea Won – KRW</option>
+                        <option value="Spain Pesetas - ESP">Spain Pesetas – ESP</OPTION>
+                        <option value="Special Drawing Rights (IMF) - XDR">Special Drawing Rights (IMF) – XDR</option>
+                        <option value="Sri Lanka Rupees - LKR">Sri Lanka Rupees – LKR</option>
+
+                        <option value="Sudan Dinars - SDD">Sudan Dinars – SDD</option>
+                        <option value="Sweden Kronor - SEK">Sweden Kronor – SEK</option>
+                        <option value="Switzerland Francs - CHF">Switzerland Francs – CHF</option>
+                        <option value="Taiwan New Dollars - TWD">Taiwan New Dollars – TWD</option>
+                        <option value="Thailand Baht - THB">Thailand Baht – THB</option>
+                        <option value="Trinidad and Tobago Dollars - TTD">Trinidad and Tobago Dollars – TTD</option>
+
+                        <option value="Tunisia Dinars - TND">Tunisia Dinars – TND</option>
+                        <option value="Turkey New Lira - TRY">Turkey New Lira – TRY</option>
+                        <option value="United Arab Emirates Dirhams - AED">United Arab Emirates Dirhams – AED</option>
+                        <option value="United Kingdom Pounds - GBP">United Kingdom Pounds – GBP</option>
+                        <option value="United States Dollars - USD">United States Dollars – USD</option>
+                        <option value="Venezuela Bolivares - VEB">Venezuela Bolivares – VEB</option>
+
+                        <option value="Vietnam Dong - VND">Vietnam Dong – VND</option>
+                        <option value="Zambia Kwacha - ZMK">Zambia Kwacha – ZMK</option>
+                    </select>
+                </div>
+
             </div>
             <div class="formContainer container">
                 <h2 class="title">EXECUTION PERIOD</h2>
@@ -112,13 +228,17 @@
                 </div>
             </div>
             <div class="formContainer container">
-                <h2 class="title">UNIT CHIEF'S APPROVAL</h2>
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area1" placeholder="Focus Area 1">
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area2" placeholder="Focus Area 2">
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area3" placeholder="Focus Area 3">
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.communications" placeholder="Communications">
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.strategy" placeholder="Strategy">
-                <input type="email" class="form-control" ng-model="consultingFirm.chiefs.CFO" placeholder="CFO">
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="source" id="source" class="form-control" ng-model="consultingFirm.chief">
+                        <option value="">Select UNIT CHIEF'S APPROVAL</option>
+                        <option value="focus1">Focus Area 1</option>
+                        <option value="focus2">Focus Area 2</option>
+                        <option value="focus3">Focus Area 3</option>
+                        <option value="comunications">Communications</option>
+                        <option value="strategy">Strategy</option>
+                        <option value="CFO">CFO</option>
+                    </select>
+                </div>
             </div>
             <div class="formContainer container">
                 <h2 class="title">REQUIRED DOCUMENTS</h2>
@@ -134,83 +254,193 @@
                     <label for="">BCP-773 form if Sole Source</label>
                     <input type="file" class="form-control" ng-model="consultingFirm.contract.termsOfReference" placeholder="Terms of Reference">
                 </div>
-                <div class="input-group col-md-4 col-md-offset-4">
-                    <label for="">System closes form to Requester</label>
-                    <input type="file" class="form-control" ng-model="consultingFirm.contract.termsOfReference" placeholder="Terms of Reference">
-                </div>
             </div>
             <button type="button" name="button" class="btn btn-primary">Submit</button>
         </section>
         <section class="section" ng-show="consultingFirm.source == 'proposals'">
             <div class="formContainer container">
-                <h2 class="title">TYPE OF SERVICE</h2>
-                <ul class="fieldlist">
-                    <li>
-                        <input type="radio" name="service" id="service1" value="evaluation" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service1">Evaluation</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service2" value="it" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service2">IT development</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service3" value="impact" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service3">Impact Evaluation</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service4" value="knowledge" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service4">Knowledge</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service5" value="publication" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service5">Publication</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service6" value="survey" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service6">Survey</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service7" value="study" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service7">Study</label>
-                    </li>
-                    <li>
-                        <input type="radio" name="service" id="service8" value="other" ng-model="consultingFirm.service" class="k-radio">
-                        <label class="k-radio-label" for="service8">Other (specify)</label>
-                    </li>
-                </ul>
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="source" id="source" class="form-control" ng-model="consultingFirm.service">
+                        <option value="">Select tipe of service</option>
+                        <option value="evaluation">Evaluation</option>
+                        <option value="IT">IT development</option>
+                        <option value="impactEvaluation">Impact Evaluation</option>
+                        <option value="knowledge">Knowledge</option>
+                        <option value="publication">Publication</option>
+                        <option value="survey">Survey</option>
+                        <option value="other">Other (specify)</option>
+                    </select>
+                </div>
                 <input type="text" class="form-control" ng-model="consultingFirm.other" ng-if="consultingFirm.service == 'other'">
             </div>
             <div class="formContainer container">
                 <h2 class="title">SHORT LIST</h2>
-                <input type="text" class="form-control" ng-model="consultingFirm.list.name" placeholder="Name">
-                <input type="text" class="form-control" ng-model="consultingFirm.list.country" placeholder="Country">
-                <input type="text" class="form-control" ng-model="consultingFirm.list.legalRepresentative" placeholder="Legal representative">
-                <input type="text" class="form-control" ng-model="consultingFirm.list.position" placeholder="Position">
-                <input type="email" class="form-control" ng-model="consultingFirm.list.email" placeholder="E-mail">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="text" class="form-control" ng-model="consultingFirm.list.name" placeholder="Name">
+                    <input type="text" class="form-control" ng-model="consultingFirm.list.country" placeholder="Country">
+                    <input type="text" class="form-control" ng-model="consultingFirm.list.legalRepresentative" placeholder="Legal representative">
+                    <input type="text" class="form-control" ng-model="consultingFirm.list.position" placeholder="Position">
+                    <input type="email" class="form-control" ng-model="consultingFirm.list.email" placeholder="E-mail">
+                </div>
             </div>
             <div class="formContainer container">
-                <h2 class="title">SOURCE OF FUNDING</h2>
-                <select name="sourceOfFounding" class="form-control" ng-model="consultingFirm.sourceOfFounding" id="sourceOfFounding">
-                    <option value="">Select The Source Of Founding</option>
-                    <option value="administrative">Administrative</option>
-                    <option value="mif">MIF DIRECTORY</option>
-                </select>
+                <!-- <h2 class="title">SOURCE OF FUNDING</h2> -->
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="sourceOfFounding" class="form-control" ng-model="consultingFirm.sourceOfFounding" id="sourceOfFounding">
+                        <option value="">Select The Source Of Founding</option>
+                        <option value="administrative">Administrative</option>
+                        <option value="mif">Technical Cooperation</option>
+                    </select>
+                </div>
                 <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'administrative'">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.found" placeholder="Fund">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.costCenter" placeholder="Cost center">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.account" placeholder="Account">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.WBS" placeholder="WBS">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.functionalArea" placeholder="Functional area">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.found" placeholder="Fund">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.costCenter" placeholder="Cost center">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.account" placeholder="Account">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.WBS" placeholder="WBS">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.functionalArea" placeholder="Functional area">
+                    </div>
                 </div>
                 <div class="fields" ng-show="consultingFirm.sourceOfFounding == 'mif'">
-                    <input type="number" class="form-control" ng-model="consultingFirm.source.number" placeholder="Number">
-                    <input type="text" class="form-control" ng-model="consultingFirm.source.CMO" placeholder="CMO">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="number" class="form-control" ng-model="consultingFirm.source.number" placeholder="Number">
+                        <input type="text" class="form-control" ng-model="consultingFirm.source.CMO" placeholder="CMO">
+                    </div>
                 </div>
             </div>
             <div class="formContainer container">
                 <h2 class="title">ESTIMATED CONTRACT AMOUNT</h2>
-                <input type="number" class="form-control" ng-model="consultingFirm.contract.amount" placeholder="Amount">
-                <input type="text" class="form-control" ng-model="consultingFirm.contract.currency" placeholder="Currency">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="number" class="form-control" ng-model="consultingFirm.contract.amount" placeholder="Amount">
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="currencies" class="form-control">
+                        <option selected value="">Select currency</option>
+                        <option value="America (United States) Dollars - USD">America (United States) Dollars – USD</option>
+                        <option value="Afghanistan Afghanis - AFN">Afghanistan Afghanis – AFN</option>
+                        <option value="Albania Leke - ALL">Albania Leke – ALL</option>
+                        <option value="Algeria Dinars - DZD">Algeria Dinars – DZD</option>
+                        <option value="Argentina Pesos - ARS">Argentina Pesos – ARS</option>
+                        <option value="Australia Dollars - AUD">Australia Dollars – AUD</option>
+                        <option value="Austria Schillings - ATS">Austria Schillings – ATS</OPTION>
+
+                        <option value="Bahamas Dollars - BSD">Bahamas Dollars – BSD</option>
+                        <option value="Bahrain Dinars - BHD">Bahrain Dinars – BHD</option>
+                        <option value="Bangladesh Taka - BDT">Bangladesh Taka – BDT</option>
+                        <option value="Barbados Dollars - BBD">Barbados Dollars – BBD</option>
+                        <option value="Belgium Francs - BEF">Belgium Francs – BEF</OPTION>
+                        <option value="Bermuda Dollars - BMD">Bermuda Dollars – BMD</option>
+
+                        <option value="Brazil Reais - BRL">Brazil Reais – BRL</option>
+                        <option value="Bulgaria Leva - BGN">Bulgaria Leva – BGN</option>
+                        <option value="Canada Dollars - CAD">Canada Dollars – CAD</option>
+                        <option value="CFA BCEAO Francs - XOF">CFA BCEAO Francs – XOF</option>
+                        <option value="CFA BEAC Francs - XAF">CFA BEAC Francs – XAF</option>
+                        <option value="Chile Pesos - CLP">Chile Pesos – CLP</option>
+
+                        <option value="China Yuan Renminbi - CNY">China Yuan Renminbi – CNY</option>
+                        <option value="RMB (China Yuan Renminbi) - CNY">RMB (China Yuan Renminbi) – CNY</option>
+                        <option value="Colombia Pesos - COP">Colombia Pesos – COP</option>
+                        <option value="CFP Francs - XPF">CFP Francs – XPF</option>
+                        <option value="Costa Rica Colones - CRC">Costa Rica Colones – CRC</option>
+                        <option value="Croatia Kuna - HRK">Croatia Kuna – HRK</option>
+
+                        <option value="Cyprus Pounds - CYP">Cyprus Pounds – CYP</option>
+                        <option value="Czech Republic Koruny - CZK">Czech Republic Koruny – CZK</option>
+                        <option value="Denmark Kroner - DKK">Denmark Kroner – DKK</option>
+                        <option value="Deutsche (Germany) Marks - DEM">Deutsche (Germany) Marks – DEM</OPTION>
+                        <option value="Dominican Republic Pesos - DOP">Dominican Republic Pesos – DOP</option>
+                        <option value="Dutch (Netherlands) Guilders - NLG">Dutch (Netherlands) Guilders – NLG</OPTION>
+
+                        <option value="Eastern Caribbean Dollars - XCD">Eastern Caribbean Dollars – XCD</option>
+                        <option value="Egypt Pounds - EGP">Egypt Pounds – EGP</option>
+                        <option value="Estonia Krooni - EEK">Estonia Krooni – EEK</option>
+                        <option value="Euro - EUR">Euro – EUR</option>
+                        <option value="Fiji Dollars - FJD">Fiji Dollars – FJD</option>
+                        <option value="Finland Markkaa - FIM">Finland Markkaa – FIM</OPTION>
+
+                        <option value="France Francs - FRF*">France Francs – FRF*</OPTION>
+                        <option value="Germany Deutsche Marks - DEM">Germany Deutsche Marks – DEM</OPTION>
+                        <option value="Gold Ounces - XAU">Gold Ounces – XAU</option>
+                        <option value="Greece Drachmae - GRD">Greece Drachmae – GRD</OPTION>
+                        <option value="Guatemalan Quetzal - GTQ">Guatemalan Quetzal – GTQ</OPTION>
+                        <option value="Holland (Netherlands) Guilders - NLG">Holland (Netherlands) Guilders – NLG</OPTION>
+                        <option value="Hong Kong Dollars - HKD">Hong Kong Dollars – HKD</option>
+
+                        <option value="Hungary Forint - HUF">Hungary Forint – HUF</option>
+                        <option value="Iceland Kronur - ISK">Iceland Kronur – ISK</option>
+                        <option value="IMF Special Drawing Right - XDR">IMF Special Drawing Right – XDR</option>
+                        <option value="India Rupees - INR">India Rupees – INR</option>
+                        <option value="Indonesia Rupiahs - IDR">Indonesia Rupiahs – IDR</option>
+                        <option value="Iran Rials - IRR">Iran Rials – IRR</option>
+
+                        <option value="Iraq Dinars - IQD">Iraq Dinars – IQD</option>
+                        <option value="Ireland Pounds - IEP*">Ireland Pounds – IEP*</OPTION>
+                        <option value="Israel New Shekels - ILS">Israel New Shekels – ILS</option>
+                        <option value="Italy Lire - ITL*">Italy Lire – ITL*</OPTION>
+                        <option value="Jamaica Dollars - JMD">Jamaica Dollars – JMD</option>
+                        <option value="Japan Yen - JPY">Japan Yen – JPY</option>
+
+                        <option value="Jordan Dinars - JOD">Jordan Dinars – JOD</option>
+                        <option value="Kenya Shillings - KES">Kenya Shillings – KES</option>
+                        <option value="Korea (South) Won - KRW">Korea (South) Won – KRW</option>
+                        <option value="Kuwait Dinars - KWD">Kuwait Dinars – KWD</option>
+                        <option value="Lebanon Pounds - LBP">Lebanon Pounds – LBP</option>
+                        <option value="Luxembourg Francs - LUF">Luxembourg Francs – LUF</OPTION>
+
+                        <option value="Malaysia Ringgits - MYR">Malaysia Ringgits – MYR</option>
+                        <option value="Malta Liri - MTL">Malta Liri – MTL</option>
+                        <option value="Mauritius Rupees - MUR">Mauritius Rupees – MUR</option>
+                        <option value="Mexico Pesos - MXN">Mexico Pesos – MXN</option>
+                        <option value="Morocco Dirhams - MAD">Morocco Dirhams – MAD</option>
+                        <option value="Netherlands Guilders - NLG">Netherlands Guilders – NLG</OPTION>
+
+                        <option value="New Zealand Dollars - NZD">New Zealand Dollars – NZD</option>
+                        <option value="Norway Kroner - NOK">Norway Kroner – NOK</option>
+                        <option value="Oman Rials - OMR">Oman Rials – OMR</option>
+                        <option value="Pakistan Rupees - PKR">Pakistan Rupees – PKR</option>
+                        <option value="Palladium Ounces - XPD">Palladium Ounces – XPD</option>
+                        <option value="Peru Nuevos Soles - PEN">Peru Nuevos Soles – PEN</option>
+
+                        <option value="Philippines Pesos - PHP">Philippines Pesos – PHP</option>
+                        <option value="Platinum Ounces - XPT">Platinum Ounces – XPT</option>
+                        <option value="Poland Zlotych - PLN">Poland Zlotych – PLN</option>
+                        <option value="Portugal Escudos - PTE">Portugal Escudos – PTE</OPTION>
+                        <option value="Qatar Riyals - QAR">Qatar Riyals – QAR</option>
+                        <option value="Romania New Lei - RON">Romania New Lei – RON</option>
+
+                        <option value="Romania Lei - ROL">Romania Lei – ROL</option>
+                        <option value="Russia Rubles - RUB">Russia Rubles – RUB</option>
+                        <option value="Saudi Arabia Riyals - SAR">Saudi Arabia Riyals – SAR</option>
+                        <option value="Silver Ounces - XAG">Silver Ounces – XAG</option>
+                        <option value="Singapore Dollars - SGD">Singapore Dollars – SGD</option>
+                        <option value="Slovakia Koruny - SKK">Slovakia Koruny – SKK</option>
+
+                        <option value="Slovenia Tolars - SIT">Slovenia Tolars – SIT</option>
+                        <option value="South Africa Rand - ZAR">South Africa Rand – ZAR</option>
+                        <option value="South Korea Won - KRW">South Korea Won – KRW</option>
+                        <option value="Spain Pesetas - ESP">Spain Pesetas – ESP</OPTION>
+                        <option value="Special Drawing Rights (IMF) - XDR">Special Drawing Rights (IMF) – XDR</option>
+                        <option value="Sri Lanka Rupees - LKR">Sri Lanka Rupees – LKR</option>
+
+                        <option value="Sudan Dinars - SDD">Sudan Dinars – SDD</option>
+                        <option value="Sweden Kronor - SEK">Sweden Kronor – SEK</option>
+                        <option value="Switzerland Francs - CHF">Switzerland Francs – CHF</option>
+                        <option value="Taiwan New Dollars - TWD">Taiwan New Dollars – TWD</option>
+                        <option value="Thailand Baht - THB">Thailand Baht – THB</option>
+                        <option value="Trinidad and Tobago Dollars - TTD">Trinidad and Tobago Dollars – TTD</option>
+
+                        <option value="Tunisia Dinars - TND">Tunisia Dinars – TND</option>
+                        <option value="Turkey New Lira - TRY">Turkey New Lira – TRY</option>
+                        <option value="United Arab Emirates Dirhams - AED">United Arab Emirates Dirhams – AED</option>
+                        <option value="United Kingdom Pounds - GBP">United Kingdom Pounds – GBP</option>
+                        <option value="United States Dollars - USD">United States Dollars – USD</option>
+                        <option value="Venezuela Bolivares - VEB">Venezuela Bolivares – VEB</option>
+
+                        <option value="Vietnam Dong - VND">Vietnam Dong – VND</option>
+                        <option value="Zambia Kwacha - ZMK">Zambia Kwacha – ZMK</option>
+                    </select>
+                </div>
             </div>
             <div class="formContainer container">
                 <h2 class="title">EXECUTION PERIOD</h2>
@@ -230,13 +460,17 @@
                 </div>
             </div>
             <div class="formContainer container">
-                <h2 class="title">UNIT CHIEF'S APPROVAL</h2>
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area1" placeholder="Focus Area 1">
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area2" placeholder="Focus Area 2">
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.area3" placeholder="Focus Area 3">
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.communications" placeholder="Communications">
-                <input type="text" class="form-control" ng-model="consultingFirm.chiefs.strategy" placeholder="Strategy">
-                <input type="email" class="form-control" ng-model="consultingFirm.chiefs.CFO" placeholder="CFO">
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="source" id="source" class="form-control" ng-model="consultingFirm.chief">
+                        <option value="">Select UNIT CHIEF'S APPROVAL</option>
+                        <option value="focus1">Focus Area 1</option>
+                        <option value="focus2">Focus Area 2</option>
+                        <option value="focus3">Focus Area 3</option>
+                        <option value="comunications">Communications</option>
+                        <option value="strategy">Strategy</option>
+                        <option value="CFO">CFO</option>
+                    </select>
+                </div>
             </div>
             <div class="formContainer container">
                 <h2 class="title">REQUIRED DOCUMENTS</h2>
@@ -252,65 +486,202 @@
     <section class="section" ng-show="contract == 'contractPayments'">
         <div class="formContainer container">
             <h2 class="title">CONTRACT NUMBER</h2>
-            <input type="number" class="form-control" ng-model="contractPayments.contractNumber" placeholder="CONTRACT NUMBER">
+            <div class="col-md-6 col-md-offset-3">
+                <input type="number" class="form-control" ng-model="contractPayments.contractNumber" placeholder="CONTRACT NUMBER">
+            </div>
         </div>
         <div class="formContainer container">
             <h2 class="title">PAYMENT NUMBER</h2>
-            <input type="number" class="form-control" ng-model="contractPayments.paymentNumber" placeholder="PAYMENT NUMBER">
+            <div class="col-md-6 col-md-offset-3">
+                <input type="number" class="form-control" ng-model="contractPayments.paymentNumber" placeholder="PAYMENT NUMBER">
+            </div>
         </div>
         <div class="formContainer container">
-            <h2 class="title">UNIT CHIEF'S APPROVAL</h2>
-            <input type="text" class="form-control" ng-model="contractPayments.chiefs.area1" placeholder="Focus Area 1">
-            <input type="text" class="form-control" ng-model="contractPayments.chiefs.area2" placeholder="Focus Area 2">
-            <input type="text" class="form-control" ng-model="contractPayments.chiefs.area3" placeholder="Focus Area 3">
-            <input type="text" class="form-control" ng-model="contractPayments.chiefs.communications" placeholder="Communications">
-            <input type="text" class="form-control" ng-model="contractPayments.chiefs.strategy" placeholder="Strategy">
-            <input type="email" class="form-control" ng-model="contractPayments.chiefs.CFO" placeholder="CFO">
+            <h2 class="title">REQUIRED DOCUMENTS</h2>
+            <div class="input-group col-md-4 col-md-offset-4">
+                <label for="">Deliverable</label>
+                <input type="file" class="form-control" ng-model="contractAmedment.contract.termsOfReference" placeholder="Terms of Reference">
+            </div>
+            <div class="input-group col-md-4 col-md-offset-4">
+                <label for="">Fiscal invoice</label>
+                <input type="file" class="form-control" ng-model="contractAmedment.contract.termsOfReference" placeholder="Terms of Reference">
+            </div>
+            <div class="input-group col-md-4 col-md-offset-4">
+                <label for="">Performance Evaluation</label>
+                <input type="file" class="form-control" ng-model="contractAmedment.contract.termsOfReference" placeholder="Terms of Reference">
+            </div>
+        </div>
+        <div class="formContainer container">
+            <div class="col-md-6 col-md-offset-3">
+                <select name="source" id="source" class="form-control" ng-model="consultingFirm.chief">
+                    <option value="">Select UNIT CHIEF'S APPROVAL</option>
+                    <option value="focus1">Focus Area 1</option>
+                    <option value="focus2">Focus Area 2</option>
+                    <option value="focus3">Focus Area 3</option>
+                    <option value="comunications">Communications</option>
+                    <option value="strategy">Strategy</option>
+                    <option value="CFO">CFO</option>
+                </select>
+            </div>
         </div>
         <button type="button" name="button" class="k-button k-primary">Submit</button>
     </section>
 
-    <section class="section formContainer container" ng-show="contract == 'contractAmedment'">
-        <h2 class="title">TYPE OF AMENDMENT</h2>
-        <select name="typeOfAmendment" class="form-control" ng-model="contractAmedment.typeOfAmendment" id="typeOfAmendment">
-            <option value="">Select The Type Of Amendment</option>
-            <option value="execution">EXECUTION EXTENSION ONLY</option>
-            <option value="documents">REQUIRED DOCUMENTS</option>
-            <option value="chiefs">UNIT CHIEF'S APPROVAL</option>
-        </select>
-        <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'execution'">
-            <input type="number" class="form-control" ng-model="contractAmedment.amendment.contractNumber" placeholder="Contract number">
-            <input type="text" class="form-control" ng-model="contractAmedment.amendment.Vendor" placeholder="Vendor">
-            <label>Current expiration date</label>
-            <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
-                <input type="text" class="form-control input-lg datepicker">
-                <div class="input-group-addon">
-                    <span class="glyphicon glyphicon-th"></span>
-                </div>
-            </div>
-            <label>New expiration date</label>
-            <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
-                <input type="text" class="form-control input-lg datepicker">
-                <div class="input-group-addon">
-                    <span class="glyphicon glyphicon-th"></span>
-                </div>
-            </div>
-        </div>
-        <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'documents'">
-            <div class="input-group col-md-4 col-md-offset-4">
-                <label for="Confirmation of no additonal cost from provider"></label>
-                <input type="file" class="form-control" ng-model="contractAmedment.amendment.confirmation" placeholder="Confirmation of no additonal cost from provider">
+    <section class="section" ng-show="contract == 'contractAmedment'">
+        <div class="formContainer container">
+            <!-- <h2 class="title">TYPE OF AMENDMENT</h2> -->
+            <div class="col-md-6 col-md-offset-3">
+                <select name="typeOfAmendment" class="form-control" ng-model="contractAmedment.typeOfAmendment" id="typeOfAmendment">
+                    <option value="">Select The Type Of Amendment</option>
+                    <option value="execution">EXECUTION EXTENSION ONLY</option>
+                    <option value="increment">AMOUNT INCREMENT</option>
+                    <option value="reduction">AMOUNT REDUCTION</option>
+                </select>
             </div>
 
         </div>
-        <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'chiefs'">
-            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.area1" placeholder="Focus Area 1">
-            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.area2" placeholder="Focus Area 2">
-            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.area3" placeholder="Focus Area 3">
-            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.communications" placeholder="Communications">
-            <input type="text" class="form-control" ng-model="contractAmedment.chiefs.strategy" placeholder="Strategy">
-            <input type="email" class="form-control" ng-model="contractAmedment.chiefs.CFO" placeholder="CFO">
+        <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'execution'">
+            <div class="formContainer container">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="number" class="form-control" ng-model="contractAmedment.amendment.contractNumber" placeholder="Contract number">
+                    <input type="text" class="form-control" ng-model="contractAmedment.amendment.Vendor" placeholder="Vendor">
+                </div>
+
+            </div>
+            <div class="formContainer container">
+                <label>Current expiration date</label>
+                <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
+                    <input type="text" class="form-control input-lg datepicker">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                <label>New expiration date</label>
+                <div class="input-group date col-md-4 col-md-offset-4" data-provide="datepicker">
+                    <input type="text" class="form-control input-lg datepicker">
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">REQUIRED DOCUMENTS</h2>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">Confirmation of no additonal cost from provider</label>
+                    <input type="file" class="form-control" ng-model="contractAmedment.amendment.confirmation" placeholder="Confirmation of no additonal cost from provider">
+                </div>
+            </div>
+            <div class="formContainer container">
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="source" id="source" class="form-control" ng-model="contractAmedment.chief">
+                        <option value="">Select UNIT CHIEF'S APPROVAL</option>
+                        <option value="focus1">Focus Area 1</option>
+                        <option value="focus2">Focus Area 2</option>
+                        <option value="focus3">Focus Area 3</option>
+                        <option value="comunications">Communications</option>
+                        <option value="strategy">Strategy</option>
+                        <option value="CFO">CFO</option>
+                    </select>
+                </div>
+            </div>
+
         </div>
-        <button type="button" name="button" class="k-button k-primary" ng-show="contractAmedment.typeOfAmendment">Submit</button>
+        <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'increment'">
+            <div class="formContainer container">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="number" class="form-control" ng-model="contractAmedment.increment.number" placeholder="Contract Number">
+                    <input type="text" class="form-control" ng-model="contractAmedment.increment.vendor" placeholder="Vendor">
+                    <input type="text" class="form-control" ng-model="contractAmedment.increment.justification" placeholder="Justification">
+                    <input type="number" class="form-control" ng-model="contractAmedment.increment.current" placeholder="Current amount">
+                    <input type="number" class="form-control" ng-model="contractAmedment.increment.increase" placeholder="Amount increase">
+                    <label for="total">New total contract amount</label>
+                    <input type="number" name="total" id="total" class="form-control" ng-model="contractAmedment.increment.current + contractAmedment.increment.increase">
+                </div>
+            </div>
+
+            <div class="formContainer container">
+                <!-- <h2 class="title">SOURCE OF FUNDING</h2> -->
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="sourceOfFounding" class="form-control" ng-model="contractAmedment.sourceOfFounding" id="sourceOfFounding">
+                        <option value="">Select The Source Of Founding</option>
+                        <option value="administrative">Administrative</option>
+                        <option value="mif">Technical Cooperation</option>
+                    </select>
+                </div>
+                <div class="fields" ng-show="contractAmedment.sourceOfFounding == 'administrative'">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.found" placeholder="Fund">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.costCenter" placeholder="Cost center">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.account" placeholder="Account">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.WBS" placeholder="WBS">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.functionalArea" placeholder="Functional area">
+                    </div>
+                </div>
+                <div class="fields" ng-show="contractAmedment.sourceOfFounding == 'mif'">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="number" class="form-control" ng-model="contractAmedment.source.number" placeholder="Number">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.CMO" placeholder="CMO">
+                    </div>
+                </div>
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">REQUIRED DOCUMENTS</h2>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">Revised terms of reference</label>
+                    <input type="file" class="form-control" ng-model="contractAmedment.contract.termsOfReference" placeholder="Terms of Reference">
+                </div>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">Revised proposal</label>
+                    <input type="file" class="form-control" ng-model="contractAmedment.contract.termsOfReference" placeholder="Terms of Reference">
+                </div>
+            </div>
+        </div>
+        <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'reduction'">
+            <div class="formContainer container">
+                <div class="col-md-6 col-md-offset-3">
+                    <input type="number" class="form-control" ng-model="contractAmedment.increment.number" placeholder="Contract Number">
+                    <input type="text" class="form-control" ng-model="contractAmedment.increment.vendor" placeholder="Vendor">
+                    <input type="text" class="form-control" ng-model="contractAmedment.increment.justification" placeholder="Justification">
+                    <input type="number" class="form-control" ng-model="contractAmedment.increment.current" placeholder="Current amount">
+                    <input type="number" class="form-control" ng-model="contractAmedment.increment.reduction" placeholder="Amount reduction">
+                    <label for="total">New total contract amount</label>
+                    <input type="number" name="total" id="total" class="form-control" ng-model="contractAmedment.increment.current - contractAmedment.increment.reduction">
+                </div>
+            </div>
+
+            <div class="formContainer container">
+                <!-- <h2 class="title">SOURCE OF FUNDING</h2> -->
+                <div class="col-md-6 col-md-offset-3">
+                    <select name="sourceOfFounding" class="form-control" ng-model="contractAmedment.sourceOfFounding" id="sourceOfFounding">
+                        <option value="">Select The Source Of Founding</option>
+                        <option value="administrative">Administrative</option>
+                        <option value="mif">Technical Cooperation</option>
+                    </select>
+                </div>
+                <div class="fields" ng-show="contractAmedment.sourceOfFounding == 'administrative'">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.found" placeholder="Fund">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.costCenter" placeholder="Cost center">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.account" placeholder="Account">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.WBS" placeholder="WBS">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.functionalArea" placeholder="Functional area">
+                    </div>
+                </div>
+                <div class="fields" ng-show="contractAmedment.sourceOfFounding == 'mif'">
+                    <div class="col-md-6 col-md-offset-3">
+                        <input type="number" class="form-control" ng-model="contractAmedment.source.number" placeholder="Number">
+                        <input type="text" class="form-control" ng-model="contractAmedment.source.CMO" placeholder="CMO">
+                    </div>
+                </div>
+            </div>
+            <div class="formContainer container">
+                <h2 class="title">REQUIRED DOCUMENTS</h2>
+                <div class="input-group col-md-4 col-md-offset-4">
+                    <label for="">Provider's acceptance to scope change and cost reduction</label>
+                    <input type="file" class="form-control" ng-model="contractAmedment.contract.termsOfReference" placeholder="Terms of Reference">
+                </div>
+            </div>
+        </div>
+        <button type="button" name="button" class="btn btn-primary" ng-show="contractAmedment.typeOfAmendment">Submit</button>
     </section>
 </section>
