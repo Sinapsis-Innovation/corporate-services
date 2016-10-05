@@ -595,7 +595,7 @@
                     <input type="number" class="form-control" ng-model="contractAmedment.increment.current" placeholder="Current amount">
                     <input type="number" class="form-control" ng-model="contractAmedment.increment.increase" placeholder="Amount increase">
                     <label for="total">New total contract amount</label>
-                    <input type="number" name="total" id="total" class="form-control" ng-model="contractAmedment.increment.current + contractAmedment.increment.increase">
+                    <input type="number" ng-if="contractAmedment.increment.current && contractAmedment.increment.increase" name="total" id="total" class="form-control" ng-value="contractAmedment.increment.current + contractAmedment.increment.increase">
                 </div>
             </div>
 
@@ -636,7 +636,7 @@
                 </div>
             </div>
         </div>
-        <div class="fields" ng-show="contractAmedment.typeOfAmendment == 'reduction'">
+        <div class="fields" ng-if="contractAmedment.typeOfAmendment == 'reduction'">
             <div class="formContainer container">
                 <div class="col-md-6 col-md-offset-3">
                     <input type="number" class="form-control" ng-model="contractAmedment.increment.number" placeholder="Contract Number">
@@ -644,8 +644,8 @@
                     <input type="text" class="form-control" ng-model="contractAmedment.increment.justification" placeholder="Justification">
                     <input type="number" class="form-control" ng-model="contractAmedment.increment.current" placeholder="Current amount">
                     <input type="number" class="form-control" ng-model="contractAmedment.increment.reduction" placeholder="Amount reduction">
-                    <label for="total">New total contract amount</label>
-                    <input type="number" name="total" id="total" class="form-control" ng-model="contractAmedment.increment.current - contractAmedment.increment.reduction">
+                    <label for="total2">New total contract amount</label>
+                    <input type="number" ng-if="contractAmedment.increment.current && contractAmedment.increment.increase" name="total2" id="total2" class="form-control" ng-value="contractAmedment.increment.current - contractAmedment.increment.reduction">
                 </div>
             </div>
 
@@ -658,7 +658,7 @@
                         <option value="mif">Technical Cooperation</option>
                     </select>
                 </div>
-                <div class="fields" ng-show="contractAmedment.sourceOfFounding == 'administrative'">
+                <div class="fields" ng-if="contractAmedment.sourceOfFounding == 'administrative'">
                     <div class="col-md-6 col-md-offset-3">
                         <input type="text" class="form-control" ng-model="contractAmedment.source.found" placeholder="Fund">
                         <input type="text" class="form-control" ng-model="contractAmedment.source.costCenter" placeholder="Cost center">
